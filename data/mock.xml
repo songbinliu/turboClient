@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!-- VMTurbo license file; license created: 2017-02-21 -->
+  <license>
+  <first-name>fname</first-name>
+  <last-name>mock</last-name>
+  <email>fname.mock@mock.com</email>
+  <num-sockets>1</num-sockets>
+  <expiration-date>2017-02-21</expiration-date>
+  <lock-code>4a17c0a38654ed54061882fefdc1266</lock-code>
+  <feature FeatureName="public_cloud"/>
+  <feature FeatureName="cloud_cost"/>
+  <feature FeatureName="container_control"/>
+  <feature FeatureName="cluster_flattening"/> 
+</license>
