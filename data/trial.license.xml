@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!-- VMTurbo license file; license created: 2017-11-07 -->
+<license>
+  <first-name>songbin</first-name>
+  <last-name>liu</last-name>
+  <email>songbin.liu@turbonomic.com</email>
+  <expiration-date>2017-12-10</expiration-date>
+  <num-sockets>100</num-sockets>
+  <lock-code>16f22171d6fd3d893a1128d5d1bfaba1</lock-code>
+  <feature FeatureName="action_script"/>
+  <feature FeatureName="active_directory"/>
+  <feature FeatureName="aggregation"/>
+  <feature FeatureName="applications"/>
+  <feature FeatureName="automated_actions"/>
+  <feature FeatureName="cloud_targets"/>
+  <feature FeatureName="custom_reports"/>
+  <feature FeatureName="customized_views"/>
+  <feature FeatureName="deploy"/>
+  <feature FeatureName="fabric"/>
+  <feature FeatureName="full_policy"/>
+  <feature FeatureName="group_editor"/>
+  <feature FeatureName="historical_data"/>
+  <feature FeatureName="loadbalancer"/>
+  <feature FeatureName="multiple_vc"/>
+  <feature FeatureName="optimizer"/>
+  <feature FeatureName="scoped_user_view"/>
+  <feature FeatureName="storage"/>
+  <feature FeatureName="trial"/>
+  <feature FeatureName="vmturbo_api"/>
+</license>
+
