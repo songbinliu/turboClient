@@ -13,6 +13,28 @@ type TurboLicense struct {
 	License string `json:"license"`
 }
 
+type LicenseResponse struct {
+	UUID string `json:"uuid,omitempty"`
+	ClassName      string `json:"className,omitemtpy"`
+	DisplayName    string `json:"displayName, omitemtpy"`
+	Email          string `json:"email, omitempty"`
+	ExpirationDate string `json:"expirationDate,omitempty"`
+	Expired        bool   `json:"expire,omitempty"`
+	IsValid bool `json:"isValid,omitempty"`
+	LicenseOwner string `json:"licenseOwner,omitempty"`
+	NumSocketsInUse int `json:"numSocketsInUse,omitemtpy"`
+	NumSocketsLicensed int `json:"numSocketsLicensed,omitemtpy"`
+	Features []string `json:"features,omitempty"`
+	//Links []Link `json:"links,omitempty"`
+}
+
+type Link struct {
+	Href string
+	Rel string
+	Templated bool
+}
+
+
 // read license from xml file, and generate encoded json content
 func getLicenseData(fname string) ([]byte, error) {
 	content, err := ioutil.ReadFile(fname)
@@ -88,6 +110,24 @@ func (c *TurboRestClient) AddLicense(fname string) (string, error) {
 		return "", err
 	}
 
-	glog.V(3).Infof("resp: %++v", resp)
+	glog.V(4).Infof("resp: %++v", resp)
+	processResponse(result)
 	return string(result), nil
+}
+
+func processResponse(resp []byte) {
+	var licenseInfo LicenseResponse
+
+	if err := json.Unmarshal(resp, &licenseInfo); err != nil {
+		glog.Errorf("Failed ot unmrshal: %+v\n%v", resp, err)
+		return
+	}
+
+	glog.V(2).Infof("response: %v", licenseInfo)
+
+	if !licenseInfo.IsValid || licenseInfo.Expired {
+		glog.V(2).Infof("License is invalidate.")
+	} else {
+		glog.V(2).Infof("License for %v is valide to %v", licenseInfo.LicenseOwner, licenseInfo.ExpirationDate)
+	}
 }

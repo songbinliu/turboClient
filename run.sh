@@ -2,8 +2,8 @@
 
 go build
 
-#host="https://localhost:9400"
-host="https://10.10.174.134"
+host="https://localhost:9400"
+#host="https://10.10.174.134"
 fname="./data/trial.license.xml"
 password="a"
 
