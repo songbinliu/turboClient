@@ -44,6 +44,7 @@ type awsAccount struct {
 	address   string
 	accesskey string
 	secret    string
+	iamRole string
 }
 
 func NewAWSTarget(aws *awsAccount) *Target {
@@ -67,6 +68,14 @@ func NewAWSTarget(aws *awsAccount) *Target {
 		Value: aws.secret,
 	}
 	inputs = append(inputs, input)
+
+	if len(aws.iamRole) > 0 {
+		input = &InputField{
+			Name: "iamRole",
+			Value: aws.iamRole,
+		}
+		inputs = append(inputs, input)
+	}
 
 	target.InputFields = inputs
 

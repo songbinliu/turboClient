@@ -86,7 +86,7 @@ type InputField struct {
 	Value string `json:"value,omitempty"`
 
 	// Type of the value this field holds = ['STRING', 'BOOLEAN', 'NUMERIC', 'GROUP_SCOPE']
-	// ValueType string `json:"valueType:omitempty"`
+	ValueType string `json:"valueType,omitempty"`
 
 	// The regex pattern that needs to be satisfied for the input field text
 	VerificationRegex string `json:"verificationRegex,omitempty"`
