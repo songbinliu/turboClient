@@ -38,7 +38,20 @@ func parseFlags() {
 	fmt.Printf("turbo.server: %v\n", host)
 }
 
+func addAWSTarget() {
+	aws := &awsAccount{
+		address:   "my.aws.amazon.com",
+		accesskey: "abdcedef",
+		secret:    "V+abcedef",
+	}
+
+	client, _ := NewRestClient(host, user, password)
+	result, _ := client.AddTargetAWS(aws)
+	glog.V(2).Infof("result=%+v", result)
+}
+
 func main() {
 	parseFlags()
-	addLicense()
+	//addLicense()
+	addAWSTarget()
 }

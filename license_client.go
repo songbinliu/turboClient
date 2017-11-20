@@ -28,13 +28,6 @@ type LicenseResponse struct {
 	//Links []Link `json:"links,omitempty"`
 }
 
-type Link struct {
-	Href string
-	Rel string
-	Templated bool
-}
-
-
 // read license from xml file, and generate encoded json content
 func getLicenseData(fname string) ([]byte, error) {
 	content, err := ioutil.ReadFile(fname)
