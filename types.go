@@ -1,17 +1,17 @@
 package main
 
 import (
-	"net/url"
-	"net/http"
 	"crypto/tls"
 	"fmt"
-	"time"
 	"github.com/golang/glog"
+	"net/http"
+	"net/url"
+	"time"
 )
 
 const (
 	API_PATH_LICENSE = "/vmturbo/rest/license"
-	API_PATH_TARGET = "/vmturbo/rest/targets"
+	API_PATH_TARGET  = "/vmturbo/rest/targets"
 
 	defaultTimeOut = time.Duration(60 * time.Second)
 )
@@ -56,7 +56,6 @@ func (c *TurboRestClient) Print() {
 	fmt.Printf("host: %v\n", c.host)
 	fmt.Printf("client: %+++v\n", c.client)
 }
-
 
 type InputField struct {
 	ClassName string `json:"className,omitempty"`

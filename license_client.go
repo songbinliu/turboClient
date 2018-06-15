@@ -14,17 +14,17 @@ type TurboLicense struct {
 }
 
 type LicenseResponse struct {
-	UUID string `json:"uuid,omitempty"`
-	ClassName      string `json:"className,omitemtpy"`
-	DisplayName    string `json:"displayName, omitemtpy"`
-	Email          string `json:"email, omitempty"`
-	ExpirationDate string `json:"expirationDate,omitempty"`
-	Expired        bool   `json:"expire,omitempty"`
-	IsValid bool `json:"isValid,omitempty"`
-	LicenseOwner string `json:"licenseOwner,omitempty"`
-	NumSocketsInUse int `json:"numSocketsInUse,omitemtpy"`
-	NumSocketsLicensed int `json:"numSocketsLicensed,omitemtpy"`
-	Features []string `json:"features,omitempty"`
+	UUID               string   `json:"uuid,omitempty"`
+	ClassName          string   `json:"className,omitemtpy"`
+	DisplayName        string   `json:"displayName, omitemtpy"`
+	Email              string   `json:"email, omitempty"`
+	ExpirationDate     string   `json:"expirationDate,omitempty"`
+	Expired            bool     `json:"expire,omitempty"`
+	IsValid            bool     `json:"isValid,omitempty"`
+	LicenseOwner       string   `json:"licenseOwner,omitempty"`
+	NumSocketsInUse    int      `json:"numSocketsInUse,omitemtpy"`
+	NumSocketsLicensed int      `json:"numSocketsLicensed,omitemtpy"`
+	Features           []string `json:"features,omitempty"`
 	//Links []Link `json:"links,omitempty"`
 }
 

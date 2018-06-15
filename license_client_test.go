@@ -37,7 +37,7 @@ func TestTurboRestClient_GenAddLicenseRequest(t *testing.T) {
 	client := genExampleClient()
 	data := []byte("<?xml version=\"1.0\"?>")
 
-	result,err := client.genAddLicenseRequest(data)
+	result, err := client.genAddLicenseRequest(data)
 	if err != nil {
 		t.Error(err)
 	}

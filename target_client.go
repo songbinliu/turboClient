@@ -1,12 +1,12 @@
 package main
 
 import (
-	"fmt"
 	"bytes"
+	"encoding/json"
+	"fmt"
+	"github.com/golang/glog"
 	"io/ioutil"
 	"net/http"
-	"encoding/json"
-	"github.com/golang/glog"
 )
 
 type Target struct {
@@ -33,10 +33,10 @@ type Target struct {
 	UUID string `json:"uuid,omitempty"`
 }
 
-func NewTarget() *Target{
+func NewTarget() *Target {
 	return &Target{
 		Category: "Cloud Management",
-		Type: "AWS",
+		Type:     "AWS",
 	}
 }
 
@@ -44,7 +44,7 @@ type awsAccount struct {
 	address   string
 	accesskey string
 	secret    string
-	iamRole string
+	iamRole   string
 }
 
 func NewAWSTarget(aws *awsAccount) *Target {
@@ -52,26 +52,26 @@ func NewAWSTarget(aws *awsAccount) *Target {
 	inputs := []*InputField{}
 
 	input := &InputField{
-		Name: "address",
+		Name:  "address",
 		Value: aws.address,
 	}
 	inputs = append(inputs, input)
 
 	input = &InputField{
-		Name: "username",
+		Name:  "username",
 		Value: aws.accesskey,
 	}
 	inputs = append(inputs, input)
 
 	input = &InputField{
-		Name: "password",
+		Name:  "password",
 		Value: aws.secret,
 	}
 	inputs = append(inputs, input)
 
 	if len(aws.iamRole) > 0 {
 		input = &InputField{
-			Name: "iamRole",
+			Name:  "iamRole",
 			Value: aws.iamRole,
 		}
 		inputs = append(inputs, input)
@@ -81,7 +81,6 @@ func NewAWSTarget(aws *awsAccount) *Target {
 
 	return target
 }
-
 
 func (c *TurboRestClient) genAddTargetRequest(target *Target) (*http.Request, error) {
 	//0. data
